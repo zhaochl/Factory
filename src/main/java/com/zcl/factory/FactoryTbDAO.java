@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.log4j.chainsaw.Main;
 /**
  * java tbDAO class generator.
  * @author zcl
@@ -233,7 +232,7 @@ public class FactoryTbDAO {
 		content.append("\t\tDbManager dm = new DbManager();\n");
 		content.append("\t\tdm.setSql(sql);\n");
 		content.append("\t\tResultSet rs = dm.getQueryResult();\n");
-		content.append("\t\t"+TbNameDAO+" " + tbNameDAO + "= null;\n");
+		content.append("\t\t"+TbNameDAO+" " + tbNameDAO + "= new "+TbNameDAO+"();\n");
 		content.append("\t\tVector v = new Vector();\n");
 		content.append("\t\ttry{\n");
 		content.append("\t\t\twhile(rs.next()){\n");
